@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio | Wahyu Setianingsih</title>
+  <meta name="description" content="Portfolio profesional Wahyu Setianingsih." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons@latest/css/devicon.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="ss.css" />
+</head>
+<body>
+
+  <!-- CURSOR -->
+  <div class="cursor" id="cursor"></div>
+  <div class="cursor-follower" id="cursorFollower"></div>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">WS<span class="dot">.</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home"       class="nav-link active" data-i18n="nav.home">Home</a></li>
+        <li><a href="#about"      class="nav-link"        data-i18n="nav.about">About</a></li>
+        <li><a href="#experience" class="nav-link"        data-i18n="nav.experience">Experience</a></li>
+        <li><a href="#project"    class="nav-link"        data-i18n="nav.project">Project</a></li>
+        <li><a href="#contact"    class="nav-link"        data-i18n="nav.contact">Contact</a></li>
+      </ul>
+      <div class="lang-switcher">
+        <select id="languageSelect" aria-label="Pilih Bahasa">
+          <option value="id">ID</option>
+          <option value="en">EN</option>
+        </select>
+      </div>
+      <a href="#contact" class="btn-hire" data-i18n="nav.hire">Hubungi Saya</a>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- 1. HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="grid-overlay"></div>
+    </div>
+    <div class="hero-container">
+      <div class="hero-text">
+        <p class="hero-greeting" data-i18n="hero.greeting">Halo, saya</p>
+        <h1 class="hero-name">Wahyu<br /><span class="gradient-text">Setianingsih</span></h1>
+        <div class="hero-role">
+          <span class="role-static" data-i18n="hero.roleStatic">Tertarik pada </span>
+          <span class="role-dynamic" id="roleText"></span>
+          <span class="cursor-blink">|</span>
+        </div>
+        <div class="hero-actions">
+          <a href="#project" class="btn btn-primary" data-i18n="hero.viewProjects">Lihat Proyek</a>
+          <a href="resume.pdf" class="btn btn-outline" data-i18n="hero.downloadCV">Unduh CV</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <div class="image-frame">
+          <img src="images/ph1.png" alt="Wahyu Setianingsih" id="profileImg" />
+          <div class="image-glow"></div>
+        </div>
+        <div class="floating-badge badge-1">
+          <span class="badge-icon">💖</span>
+          <span>Web Design</span>
+        </div>
+        <div class="floating-badge badge-3">
+          <span class="badge-icon">🌸</span>
+          <span>Web Development</span>
+        </div>
+        <div class="floating-badge badge-2">
+          <span class="badge-icon">📊</span>
+          <span>System Analyst</span>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-line"></div>
+      <span data-i18n="hero.scroll">Gulir</span>
+    </div>
+  </section>
+
+  <!-- 2. ABOUT -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label" data-i18n="about.sectionLabel">Tentang Saya</p>
+        <h2 class="section-title">
+          <span data-i18n="about.titleMain">Kenali Saya </span>
+          <span class="gradient-text" data-i18n="about.titleHighlight">Lebih Dekat</span>
+        </h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-image-wrap">
+          <div class="about-img-box">
+            <img src="images/ph2.png" alt="Tentang Wahyu" />
+            <div class="circle circle1"></div>
+            <div class="circle circle2"></div>
+            <div class="circle circle3"></div>
+          </div>
+        </div>
+        <div class="about-content">
+          <p class="about-intro" data-i18n="about.intro">Saya adalah lulusan <strong>S1 Sistem Informasi dari Universitas Mercu Buana Yogyakarta</strong> yang memiliki minat dalam pengembangan web, desain web, serta manajemen proyek teknologi informasi.</p>
+          <p class="about-desc" data-i18n="about.desc">Selama masa pendidikan dan magang, saya terlibat dalam berbagai proyek yang membantu meningkatkan kemampuan analisis sistem, pengembangan aplikasi web, pengelolaan proyek, serta tata kelola teknologi informasi.</p>
+          <div class="about-info">
+            <div class="info-item">
+              <span class="info-label" data-i18n="about.locationLabel">📍 Lokasi</span>
+              <span data-i18n="about.locationValue">Kebumen, Jawa Tengah, Indonesia</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label" data-i18n="about.educationLabel">🎓 Pendidikan Terakhir</span>
+              <span data-i18n="about.educationValue">S1 Sistem Informasi, UMBY</span>
+            </div>
+            <div class="info-item">
+              <span class="info-label" data-i18n="about.languagesLabel">🌐 Bahasa</span>
+              <span data-i18n="about.languagesValue">Indonesia, Inggris</span>
+            </div>
+          </div>
+          <div class="about-actions">
+            <a href="#contact" class="btn btn-primary" data-i18n="about.contactButton">Hubungi Saya</a>
+            <a href="#education" class="btn btn-ghost"  data-i18n="about.educationButton">Lihat Pendidikan</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="about-extended">
+        <div class="about-subsection" id="education">
+          <div class="section-header">
+            <p class="section-label" data-i18n="education.sectionLabel">Riwayat Akademis</p>
+            <h2 class="section-title">
+              <span data-i18n="education.titleMain">Pendidikan </span>
+              <span class="gradient-text" data-i18n="education.titleHighlight">Formal</span>
+            </h2>
+          </div>
+          <div class="education-list">
+            <div class="edu-card">
+              <div class="edu-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+              <div class="edu-details">
+                <span class="edu-year">2021 - 2025</span>
+                <h3 data-i18n="education.uniName">Universitas Mercu Buana Yogyakarta</h3>
+                <p class="edu-degree" data-i18n="education.degree">Sarjana Sistem Informasi - Fakultas Teknologi Informasi</p>
+                <p class="edu-desc" data-i18n="education.desc">Lulus dengan IPK 3.90/4.00 (Pujian/Cumlaude). Pernah menjadi Assisten Laboratorium untuk Mata Kuliah Database Design dan Programming with SQL.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CERTIFICATIONS -->
+        <div class="about-subsection" id="certifications">
+          <div class="section-header">
+            <p class="section-label" data-i18n="certifications.sectionLabel">Pencapaian</p>
+            <h2 class="section-title">
+              <span data-i18n="certifications.titleMain">Sertifikasi </span>
+              <span class="gradient-text" data-i18n="certifications.titleHighlight">Profesional</span>
+            </h2>
+          </div>
+          <div class="certifications-grid">
+            <div class="cert-card">
+              <div class="cert-badge"><i class="fa-solid fa-award"></i></div>
+              <div class="cert-info">
+                <h3>Microsoft Certified: Azure AI Fundamentals (AI-900)</h3>
+                <p class="cert-issuer" data-i18n="cert.issuerLabel">Penerbit: Microsoft</p>
+                <span class="cert-date" data-i18n="cert1.date">Tahun Terbit: 2024</span>
+              </div>
+            </div>
+            <div class="cert-card">
+              <div class="cert-badge"><i class="fa-solid fa-award"></i></div>
+              <div class="cert-info">
+                <h3 data-i18n="cert2.name">UI/UX Design</h3>
+                <p class="cert-issuer" data-i18n="cert2.issuer">Penerbit: Segia Tech</p>
+                <span class="cert-date" data-i18n="cert2.date">Tahun Terbit: 2025</span>
+              </div>
+            </div>
+            <div class="cert-card">
+              <div class="cert-badge"><i class="fa-solid fa-award"></i></div>
+              <div class="cert-info">
+                <h3 data-i18n="cert3.name">Digital Office Administrasi Berbasis Google Workspace</h3>
+                <p class="cert-issuer" data-i18n="cert3.issuer">Penerbit: BNSP</p>
+                <span class="cert-date" data-i18n="cert3.date">Berlaku 2026 s/d 2029</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ORGANIZATIONS -->
+        <div class="about-subsection" id="organizations">
+          <div class="section-header">
+            <p class="section-label" data-i18n="organizations.sectionLabel">Kepemimpinan</p>
+            <h2 class="section-title">
+              <span data-i18n="organizations.titleMain">Riwayat </span>
+              <span class="gradient-text" data-i18n="organizations.titleHighlight">Organisasi</span>
+            </h2>
+          </div>
+          <div class="org-list">
+            <div class="org-card">
+              <div class="org-time">2023 - 2024</div>
+              <div class="org-details">
+                <h3 data-i18n="org1.name">Himpunan Mahasiswa Program Studi Sistem Informasi</h3>
+                <p class="org-role" data-i18n="org1.role">Wakil Ketua</p>
+                <ul class="skill-list">
+                  <li><i class="fa-solid fa-check"></i> <span data-i18n="org1.task1">Mendukung kepemimpinan organisasi dan pengambilan keputusan</span></li>
+                  <li><i class="fa-solid fa-check"></i> <span data-i18n="org1.task2">Mengkoordinasikan program kerja serta menjadi penghubung antara pengurus, anggota, dan pihak eksternal</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="org-card">
+              <div class="org-time">2022 - 2023</div>
+              <div class="org-details">
+                <h3 data-i18n="org2.name">Himpunan Mahasiswa Program Studi Sistem Informasi</h3>
+                <p class="org-role" data-i18n="org2.role">Bendahara</p>
+                <ul class="skill-list">
+                  <li><i class="fa-solid fa-check"></i> <span data-i18n="org2.task1">Mengelola administrasi keuangan organisasi, termasuk pencatatan transaksi, penyusunan laporan keuangan, dan pengelolaan anggaran kegiatan selama satu periode kepengurusan</span></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. EXPERIENCE -->
+  <section class="internship section" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label" data-i18n="internship.sectionLabel">Pengalaman Magang</p>
+        <h2 class="section-title">
+          <span data-i18n="internship.titleMain">Pengalaman </span>
+          <span class="gradient-text" data-i18n="internship.titleHighlight">Magang</span>
+        </h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3 data-i18n="intern1.title">Penata Kelola Sistem dan Teknologi Informasi</h3>
+                <p class="company" data-i18n="intern1.company"><i class="fa-solid fa-building-columns"></i> BBPVP Semarang · Magang</p>
+              </div>
+              <span class="timeline-date" data-i18n="intern1.date">Nov 2025 - Mei 2026</span>
+            </div>
+            <ul class="timeline-list">
+              <li data-i18n="intern1.task1">Mengelola dan mengembangkan sistem monitoring pegawai, sistem administrasi divisi, dan sistem persuratan otomatis untuk meningkatkan efisiensi proses kerja</li>
+              <li data-i18n="intern1.task2">Mengelola data peserta dan data kegiatan pelatihan guna mendukung pelaksanaan program pelatihan ya g akurat dan terstruktur.</li>
+            </ul>
+            <div class="timeline-tags"><span>Bootstrap</span><span>PHP</span><span>CodeIgniter</span><span>Google Apps Script</span><span>Google Workspace</span></div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <div class="timeline-header">
+              <div>
+                <h3 data-i18n="intern2.title">Sekretariat</h3>
+                <p class="company" data-i18n="intern2.company"><i class="fa-solid fa-building-columns"></i> Badan Kesatuan Bangsa dan Politik Kab. Kebumen · Magang</p>
+              </div>
+              <span class="timeline-date" data-i18n="intern2.date">Feb - Jul 2024</span>
+            </div>
+            <ul class="timeline-list">
+              <li data-i18n="intern2.task1">Mengelola dan mengarsipkan dokumen persuratan dari beberapa tahun sebelumnya untuk mendukung tertib administrasi dan kemudahan akses data.</li>
+              <li data-i18n="intern2.task2">Mengelola serta melakukan pemeliharaan sistem informasi yang digunakan dalam kegiatan operasional instansi.</li>
+              <li data-i18n="intern2.task3">Menyusun notulensi rapat serta menyiapkan kebutuhan administrasi dan koordinasi kegiatan harian.</li>
+            </ul>
+            <div class="timeline-tags"><span>Laravel</span><span>JavaScript</span><span>Google Workspace</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. PROJECTS -->
+  <section class="projects section" id="project">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label" data-i18n="projects.sectionLabel">Karya Saya</p>
+        <h2 class="section-title">
+          <span data-i18n="projects.titleMain">Proyek </span>
+          <span class="gradient-text" data-i18n="projects.titleHighlight">Pilihan</span>
+        </h2>
+      </div>
+      <div class="projects-filter" id="projectsFilter">
+        <button class="filter-btn active" data-filter="all"    data-i18n="projects.filterAll">Semua</button>
+        <button class="filter-btn" data-filter="web" data-i18n="projects.filterWeb">Aplikasi Web</button>
+        <button class="filter-btn" data-filter="mobile" data-i18n="projects.filterMobile">Aplikasi Mobile</button>
+        <button class="filter-btn" data-filter="design" data-i18n="projects.filterDesign">Desain UI/UX</button>
+      </div>
+      <div class="projects-grid" id="projectsGrid">
+        <div class="project-card" data-category="web">
+          <div class="project-img">
+            <div class="project-placeholder" style="background:linear-gradient(135deg,#fbc2eb,#a6c1ee)"><span>🌸</span></div>
+            <div class="project-overlay">
+              <a href="#" class="proj-ss proj-link" data-ss="images/selfcare-1.svg,images/selfcare-2.svg" data-ss-captions="Dashboard|Laporan Aktivitas">🖼️ Screenshot</a>
+              <a href="https://self-care-tracker.netlify.app/" class="proj-link">🔗 Live Demo</a>
+              <a href="https://github.com/WahyuS04/Self-Care-Tracker" class="proj-link">💻 GitHub</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags"><span>React</span><span>CSS Gradient</span></div>
+            <h3 data-i18n="proj1.name">Self-Care Tracker Web</h3>
+            <p data-i18n="proj1.desc">Aplikasi web untuk mencatat aktivitas perawatan diri harian, hidrasi, dan pelacakan tidur dengan visualisasi pastel yang manis.</p>
+          </div>
+        </div>
+        <div class="project-card" data-category="design">
+          <div class="project-img">
+          <img src="images/pt-1.png"  class="project-image">
+            <div class="project-overlay">
+              <a href="https://www.figma.com/design/lHYTfd8wcJqPrE8trQs1Dl/Visionizer?m=auto&t=jiuIQmRuw0VigSlR-6" class="proj-link">
+                🔗 Figma Link
+              </a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags"><span>Figma</span><span>UI Design</span></div>
+            <h3 data-i18n="proj2.name">UI/UX Sistem informasi "Visionizer"</h3>
+            <p data-i18n="proj2.desc">Desain antarmuka website sistem informasi Visionizer. Desain ini dibuat saat mengikuti pelatihan UI/UX Design bersama Segia Tech.</p>
+          </div>
+        </div>
+        <div class="project-card" data-category="web">
+          <div class="project-img">
+            <img src="images/simon/2.png"  class="project-image">
+            <div class="project-overlay">
+              <a href="#" class="proj-ss proj-link" data-ss="images/simon/2.png,images/simon/3.png,images/simon/4.png,images/simon/5.png,images/simon/6.png" data-ss-captions="Dokumentasi Aplikasi|Tampilan Utama|Fitur Utama">🖼️ Dokumentasi</a>
+              <a href="https://github.com/WahyuS04/SIMON_Pegawai.git" class="proj-link">💻 GitHub</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags"><span>PHP</span><span>CodeIgniter</span><span>MySQL</span><span>Bootstrap</span></div>
+            <h3 data-i18n="proj3.name">Sistem Monitoring Pegawai BBPVP Semarang</h3>
+            <p data-i18n="proj3.desc">Sistem informasi untuk memonitoring aktivitas pegawai di BBPVP Semarang, dilengkapi dengan fitur pencatatan absensi dan aktivitas harian serta laporan.
+              Untuk saat ini sistem telah terintegrasi pada server lokal BBPVP Semarang dan digunakan untuk monitoring aktivitas instruktur. Sistem ini dibuat sebagai bagian dari tugas akhir magang saya di BBPVP Semarang.
+            </p>
+          </div>
+        </div>
+        <div class="project-card" data-category="web">
+          <div class="project-img">
+            <img src="images/pt-2.png"  class="project-image">
+            <div class="project-overlay">
+              <a href="https://script.google.com/macros/s/AKfycbyx5TJKWZKATeo_Kqyhm370cfFp7JMTUE7VYNXGF-A/dev" class="proj-link">🔗 Live Demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags"><span>Google Apps Script</span></div>
+            <h3 data-i18n="proj3.name">Sistem Administrasi Intala</h3>
+            <p data-i18n="proj3.desc">Sistem ini digunakan untuk merekap sertifikat yang dikeluarkan oleh Bidang Intala BBPVP Semarang. Sistem ini menggunakan Google Apps Script untuk pengembangannya.</p>
+          </div>
+        </div>
+        <div class="project-card" data-category="web">
+          <div class="project-img">
+            <img src="images/pt-3.png"  class="project-image">
+            <div class="project-overlay">
+              <a href="https://script.google.com/macros/s/AKfycbx50YwCb3ylRNAJSsBYgqwcgKR6OgQGgFcgPdLOlE4/dev" class="proj-link">🔗 Live Demo</a>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-tags"><span>Google Apps Script</span></div>
+            <h3 data-i18n="proj3.name">Sistem SPPD</h3>
+            <p data-i18n="proj3.desc">Sistem ini digunakan untuk membuat pelaporan SPPD secara otomatis di Bidang Intala BBPVP Semarang. Sistem ini menggunakan Google Apps Script untuk pengembangannya.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. SKILLS -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label" data-i18n="skills.sectionLabel">Kompetensi</p>
+        <h2 class="section-title">
+          <span data-i18n="skills.titleMain">Keahlian & </span>
+          <span class="gradient-text" data-i18n="skills.titleHighlight">Teknologi</span>
+        </h2>
+      </div>
+      <div class="skills-tabs" id="skillsTabs">
+        <button class="tab-btn active" data-tab="frontend" data-i18n="skills.tabFrontend">Bahasa & Framework</button>
+        <button class="tab-btn"        data-tab="tools"    data-i18n="skills.tabTools">Desain & Alat Kerja</button>
+      </div>
+      <div class="skills-content" id="skillsContent">
+        <div class="tab-panel active" id="frontend">
+          <div class="skills-flex">
+            <div class="skill-tag-item"><i class="fa-brands fa-html5" style="color:#E34F26;"></i> HTML5</div>
+            <div class="skill-tag-item"><i class="fa-brands fa-css3-alt" style="color:#1572B6;"></i> CSS3</div>
+            <div class="skill-tag-item"><i class="fa-brands fa-bootstrap" style="color:#7952B3;"></i> Bootstrap</div>
+            <div class="skill-tag-item"><i class="fa-brands fa-js" style="color:#F7DF1E;"></i> JavaScript</div>
+            <div class="skill-tag-item"><i class="fa-brands fa-node-js" style="color:#339933;"></i> Node.js</div>
+            <div class="skill-tag-item"><i class="fa-brands fa-php" style="color:#777BB4;"></i> PHP</div>
+            <div class="skill-tag-item"><i class="fa-brands fa-python" style="color:#3776AB;"></i> Python</div>
+            <div class="skill-tag-item"><i class="fa-brands fa-git-alt" style="color:#F05032;"></i> Git</div>
+            <div class="skill-tag-item"><i class="fa-brands fa-laravel" style="color:#FF2D20;"></i> Laravel</div>
+            <div class="skill-tag-item"><i class="fa-solid fa-fire" style="color:#EE4623;"></i> CodeIgniter</div>
+            <div class="skill-tag-item"><i class="fa-solid fa-database" style="color:#4479A1;"></i> MySQL</div>
+            <div class="skill-tag-item"><i class="fa-solid fa-leaf" style="color:#47A248;"></i> MongoDB</div>
+          </div>
+        </div>
+        <div class="tab-panel" id="tools">
+          <div class="skills-flex">
+            <div class="skill-tag-item"><i class="fa-brands fa-figma" style="color:#F24E1E;"></i> Figma</div>
+            <div class="skill-tag-item"><i class="fa-solid fa-pen-ruler" style="color:#FF61F6;"></i> Adobe XD</div>
+            <div class="skill-tag-item"><i class="fa-solid fa-diagram-project" style="color:#1565C0;"></i> Visual Paradigm</div>
+            <div class="skill-tag-item"><i class="fa-solid fa-code" style="color:#007ACC;"></i> Visual Studio Code</div>
+            <div class="skill-tag-item"><i class="fa-solid fa-palette" style="color:#00C4CC;"></i> Canva</div>
+            <div class="skill-tag-item"><i class="fa-brands fa-google" style="color:#4285F4;"></i> Google Workspace</div>
+            <div class="skill-tag-item"><i class="fa-solid fa-file-word" style="color:#185ABD;"></i> Microsoft Office</div>
+            <div class="skill-tag-item"><i class="fa-solid fa-server" style="color:#FF5722;"></i> Laragon</div>
+            <div class="skill-tag-item"><i class="fa-solid fa-rocket text-pink"></i> Postman</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. CONTACT -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-label" data-i18n="contact.sectionLabel">Hubungi Saya</p>
+        <h2 class="section-title">
+          <span data-i18n="contact.titleMain">Mari </span>
+          <span class="gradient-text" data-i18n="contact.titleHighlight">Terhubung</span>
+        </h2>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-card" id="contact-email">
+            <div class="contact-icon"><i class="fa-regular fa-envelope"></i></div>
+            <div>
+              <h4 data-i18n="contact.emailLabel">Email</h4>
+              <p data-i18n="contact.emailValue">wahyusetianingsih341@gmail.com</p>
+            </div>
+          </div>
+          <div class="contact-card" id="contact-phone">
+            <div class="contact-icon"><i class="fa-brands fa-whatsapp"></i></div>
+            <div>
+              <h4 data-i18n="contact.phoneLabel">WhatsApp</h4>
+              <p data-i18n="contact.phoneValue">+62 855-4052-9102</p>
+            </div>
+          </div>
+          <div class="contact-card" id="contact-location">
+            <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div>
+              <h4 data-i18n="contact.locationLabel">Domisili</h4>
+              <p data-i18n="contact.locationValue">Kebumen, Jawa Tengah, Indonesia</p>
+            </div>
+          </div>
+          <div class="contact-social">
+            <a href="https://www.linkedin.com/in/wahyu-setianingsih/" class="social-btn" id="btn-linkedin"  aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="https://github.com/WahyuS04" class="social-btn" id="btn-github"    aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.instagram.com/ayutianiws" class="social-btn" id="btn-instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="nameInput" data-i18n="contact.nameLabel">Nama Lengkap</label>
+            <input type="text"  id="nameInput"    data-i18n-placeholder="contact.namePlaceholder"    placeholder="Nama Anda" required />
+            <span class="form-error" id="nameError"></span>
+          </div>
+          <div class="form-group">
+            <label for="emailInput" data-i18n="contact.emailLabelForm">Alamat Email</label>
+            <input type="email" id="emailInput"   data-i18n-placeholder="contact.emailPlaceholder"   placeholder="email@contoh.com" required />
+            <span class="form-error" id="emailError"></span>
+          </div>
+          <div class="form-group">
+            <label for="subjectInput" data-i18n="contact.subjectLabel">Subjek</label>
+            <input type="text"  id="subjectInput" data-i18n-placeholder="contact.subjectPlaceholder" placeholder="Tawaran Kerja / Magang / Kolaborasi" />
+          </div>
+          <div class="form-group">
+            <label for="messageInput" data-i18n="contact.messageLabel">Pesan Anda</label>
+            <textarea id="messageInput" rows="5" data-i18n-placeholder="contact.messagePlaceholder" placeholder="Tuliskan pesan secara singkat dan jelas di sini..." required></textarea>
+            <span class="form-error" id="messageError"></span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
+            <span id="btnText"    data-i18n="contact.sendButton">Kirim Pesan</span>
+            <span id="btnLoading" style="display:none" data-i18n="contact.sendingText">Mengirim...</span>
+          </button>
+          <div class="form-success" id="formSuccess" data-i18n="contact.successMessage">
+            Pesan Anda telah sukses dikirim! Terima kasih banyak.
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <a href="#home" class="nav-logo">WS<span class="dot">.</span></a>
+        <p data-i18n="footer.description">Terima kasih dan salam hangat dari saya <i class="fa-regular fa-heart"></i></p>
+      </div>
+      <div class="footer-bottom">
+        <p data-i18n="footer.copy">© 2026 Wahyu Setianingsih</p>
+        <div class="footer-links">
+          <a href="#home"       data-i18n="nav.home">Home</a>
+          <a href="#about"      data-i18n="nav.about">About</a>
+          <a href="#experience" data-i18n="nav.experience">Experience</a>
+          <a href="#project"    data-i18n="nav.project">Project</a>
+          <a href="#contact"    data-i18n="nav.contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
+
+  <script src="script.js?v=2"></script>
+</body>
+</html>

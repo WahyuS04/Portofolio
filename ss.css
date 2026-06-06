@@ -1,0 +1,82 @@
+/* Styles for project screenshot thumbnails and lightbox */
+.projects-grid .proj-link{display:inline-block;margin:6px 8px;padding:6px 10px;border-radius:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(0,0,0,0.04);color:var(--text);font-weight:700}
+.proj-ss{background:linear-gradient(90deg,var(--primary),var(--accent));color:#fff}
+
+/* Lightbox modal */
+.ss-modal{position:fixed;inset:0;background:rgba(0,0,0,0.8);display:flex;align-items:center;justify-content:center;z-index:2000;opacity:0;pointer-events:none;transition:opacity .25s}
+.ss-modal.open{opacity:1;pointer-events:auto}
+.ss-viewer{max-width:100%;max-height:100%;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.ss-viewer img{width:auto;height:auto;max-width:calc(100vw - 80px);max-height:calc(100vh - 120px);object-fit:contain;border-radius:12px;box-shadow:0 20px 50px rgba(0,0,0,0.6);background:#111}
+.ss-close,.ss-prev,.ss-next,.ss-fullscreen{position:absolute;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08);color:#fff;padding:10px;border-radius:10px;cursor:pointer}
+.ss-close{top:20px;right:20px;transform:none}
+.ss-fullscreen{top:20px;right:80px;transform:none}
+.ss-prev{left:20px}
+.ss-next{right:20px}
+.ss-caption{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);color:#fff;font-weight:600;background:rgba(0,0,0,0.35);padding:6px 12px;border-radius:8px}
+
+/* small screens */
+@media (max-width:600px){.ss-prev,.ss-next{display:none}.ss-viewer{max-width:98%;max-height:78%}}
+
+/* Documentation image layout */
+.documentation-gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:18px;
+  margin-top:24px;
+}
+.documentation-gallery img{
+  width:100%;
+  height:auto;
+  object-fit:contain;
+  border-radius:18px;
+  border:1px solid rgba(255,255,255,0.16);
+  background:rgba(255,255,255,0.9);
+  box-shadow:0 18px 45px rgba(0,0,0,0.12);
+  transition:transform .25s ease, box-shadow .25s ease, filter .25s ease;
+}
+.documentation-gallery img:hover{
+  transform:scale(1.01);
+  box-shadow:0 22px 60px rgba(0,0,0,0.18);
+}
+.documentation-gallery .documentation-item{
+  overflow:hidden;
+  border-radius:18px;
+  background:rgba(255,255,255,0.06);
+  padding:12px;
+}
+.documentation-caption{
+  display:block;
+  margin-top:10px;
+  color:#2d3142;
+  font-size:0.95rem;
+  line-height:1.5;
+  text-align:center;
+}
+
+/* Enhanced screenshot controls */
+.proj-ss{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  min-width:fit-content;
+  padding:10px 16px;
+  border-radius:999px;
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.proj-ss:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(255,117,143,0.25);
+}
+.ss-modal{
+  padding:24px;
+}
+.ss-viewer{
+  width:min(100%,1100px);
+  padding:10px;
+}
+.ss-caption{
+  max-width:calc(100% - 40px);
+  text-align:center;
+}
+
