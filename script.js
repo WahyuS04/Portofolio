@@ -307,54 +307,136 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 });
 
 // ===== CONTACT FORM =====
+
+// Inisialisasi EmailJS
+emailjs.init("jIasFypAbnOmID0lW");
+
 const form = document.getElementById('contactForm');
+
 if (form) {
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    let valid = true;
-    const name  = document.getElementById('nameInput');
-    const email = document.getElementById('emailInput');
-    const msg   = document.getElementById('messageInput');
-    const nameErr  = document.getElementById('nameError');
-    const emailErr = document.getElementById('emailError');
-    const msgErr   = document.getElementById('messageError');
 
-    [name, email, msg].forEach(f => { if (f) f.classList.remove('error'); });
-    [nameErr, emailErr, msgErr].forEach(e => { if (e) e.textContent = ''; });
+    form.addEventListener('submit', function (e) {
 
-    if (name && !name.value.trim()) {
-      name.classList.add('error');
-      if (nameErr) nameErr.textContent = currentLanguage === 'en' ? 'Name is required.' : 'Nama wajib diisi.';
-      valid = false;
-    }
-    if (email && (!email.value.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value))) {
-      email.classList.add('error');
-      if (emailErr) emailErr.textContent = currentLanguage === 'en' ? 'Invalid email.' : 'Email tidak valid.';
-      valid = false;
-    }
-    if (msg && (!msg.value.trim() || msg.value.trim().length < 10)) {
-      msg.classList.add('error');
-      if (msgErr) msgErr.textContent = currentLanguage === 'en' ? 'Message must be at least 10 characters.' : 'Pesan minimal 10 karakter.';
-      valid = false;
-    }
-    if (!valid) return;
+        e.preventDefault();
 
-    const btnText    = document.getElementById('btnText');
-    const btnLoading = document.getElementById('btnLoading');
-    const submitBtn  = document.getElementById('submitBtn');
-    if (btnText)    btnText.style.display    = 'none';
-    if (btnLoading) btnLoading.style.display = 'block';
-    if (submitBtn)  submitBtn.disabled       = true;
+        let valid = true;
 
-    setTimeout(() => {
-      if (btnText)    btnText.style.display    = 'block';
-      if (btnLoading) btnLoading.style.display = 'none';
-      if (submitBtn)  submitBtn.disabled       = false;
-      const successEl = document.getElementById('formSuccess');
-      if (successEl) { successEl.style.display = 'block'; setTimeout(() => { successEl.style.display = 'none'; }, 5000); }
-      form.reset();
-    }, 2000);
-  });
+        const name = document.getElementById('nameInput');
+        const email = document.getElementById('emailInput');
+        const subject = document.getElementById('subjectInput');
+        const msg = document.getElementById('messageInput');
+
+        const nameErr = document.getElementById('nameError');
+        const emailErr = document.getElementById('emailError');
+        const msgErr = document.getElementById('messageError');
+
+        const btnText = document.getElementById('btnText');
+        const btnLoading = document.getElementById('btnLoading');
+        const submitBtn = document.getElementById('submitBtn');
+        const successEl = document.getElementById('formSuccess');
+
+        // Reset Error
+        [name, email, msg].forEach(field => {
+            if (field) field.classList.remove('error');
+        });
+
+        [nameErr, emailErr, msgErr].forEach(error => {
+            if (error) error.textContent = '';
+        });
+
+        if (successEl) {
+            successEl.style.display = 'none';
+        }
+
+        // Validasi Nama
+        if (!name.value.trim()) {
+            name.classList.add('error');
+            nameErr.textContent =
+                currentLanguage === 'en'
+                    ? 'Name is required.'
+                    : 'Nama wajib diisi.';
+            valid = false;
+        }
+
+        // Validasi Email
+        if (
+            !email.value.trim() ||
+            !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)
+        ) {
+            email.classList.add('error');
+            emailErr.textContent =
+                currentLanguage === 'en'
+                    ? 'Invalid email.'
+                    : 'Email tidak valid.';
+            valid = false;
+        }
+
+        // Validasi Pesan
+        if (
+            !msg.value.trim() ||
+            msg.value.trim().length < 10
+        ) {
+            msg.classList.add('error');
+            msgErr.textContent =
+                currentLanguage === 'en'
+                    ? 'Message must be at least 10 characters.'
+                    : 'Pesan minimal 10 karakter.';
+            valid = false;
+        }
+
+        if (!valid) return;
+
+        // Loading State
+        btnText.style.display = 'none';
+        btnLoading.style.display = 'inline';
+        submitBtn.disabled = true;
+
+        // Kirim Email
+        emailjs.send(
+            "service_xjfooj5",
+            "template_aky3c9a",
+            {
+                from_name: name.value,
+                from_email: email.value,
+                subject: subject.value,
+                message: msg.value
+            }
+        )
+        .then(function () {
+
+            btnText.style.display = 'inline';
+            btnLoading.style.display = 'none';
+            submitBtn.disabled = false;
+
+            if (successEl) {
+                successEl.style.display = 'block';
+
+                setTimeout(() => {
+                    successEl.style.display = 'none';
+                }, 5000);
+            }
+
+            form.reset();
+
+        })
+        .catch(function (error) {
+
+            btnText.style.display = 'inline';
+            btnLoading.style.display = 'none';
+            submitBtn.disabled = false;
+
+            console.error("EmailJS Error:", error);
+
+            alert(
+                currentLanguage === 'en'
+                    ? 'Failed to send message.'
+                    : 'Gagal mengirim pesan.'
+            );
+
+        });
+
+    });
+
 }
 
 // ===== BACK TO TOP =====

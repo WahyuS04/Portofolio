@@ -36,7 +36,7 @@
           <option value="en">EN</option>
         </select>
       </div>
-      <a href="#contact" class="btn-hire" data-i18n="nav.hire">Hubungi Saya</a>
+      <a href="https://wa.me/6285540529102" class="btn-hire" data-i18n="nav.hire">Hubungi Saya</a>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
@@ -61,7 +61,7 @@
         </div>
         <div class="hero-actions">
           <a href="#project" class="btn btn-primary" data-i18n="hero.viewProjects">Lihat Proyek</a>
-          <a href="resume.pdf" class="btn btn-outline" data-i18n="hero.downloadCV">Unduh CV</a>
+          <a href="CV - Wahyu Setianingsih.pdf" download="CV - Wahyu Setianingsih.pdf" class="btn btn-outline" data-i18n="hero.downloadCV">Unduh CV</a>
         </div>
       </div>
       <div class="hero-image">
@@ -292,23 +292,23 @@
       <div class="projects-filter" id="projectsFilter">
         <button class="filter-btn active" data-filter="all"    data-i18n="projects.filterAll">Semua</button>
         <button class="filter-btn" data-filter="web" data-i18n="projects.filterWeb">Aplikasi Web</button>
-        <button class="filter-btn" data-filter="mobile" data-i18n="projects.filterMobile">Aplikasi Mobile</button>
         <button class="filter-btn" data-filter="design" data-i18n="projects.filterDesign">Desain UI/UX</button>
       </div>
       <div class="projects-grid" id="projectsGrid">
         <div class="project-card" data-category="web">
           <div class="project-img">
-            <div class="project-placeholder" style="background:linear-gradient(135deg,#fbc2eb,#a6c1ee)"><span>🌸</span></div>
+          <img src="images/govplan/9.png"  class="project-image">
             <div class="project-overlay">
-              <a href="#" class="proj-ss proj-link" data-ss="images/selfcare-1.svg,images/selfcare-2.svg" data-ss-captions="Dashboard|Laporan Aktivitas">🖼️ Screenshot</a>
-              <a href="https://self-care-tracker.netlify.app/" class="proj-link">🔗 Live Demo</a>
-              <a href="https://github.com/WahyuS04/Self-Care-Tracker" class="proj-link">💻 GitHub</a>
+              <a href="#" class="proj-ss proj-link" data-ss="images/govplan/9.png,images/govplan/10.png,images/govplan/11.png,images/govplan/12.png,images/govplan/13.png" data-ss-captions="Dokumentasi Aplikasi|Tampilan Utama|Fitur Utama">🖼️ Dokumentasi</a>
+              <a href="https://github.com/WahyuS04/govplan.git" class="proj-link">💻 GitHub</a>
             </div>
           </div>
           <div class="project-info">
-            <div class="project-tags"><span>React</span><span>CSS Gradient</span></div>
-            <h3 data-i18n="proj1.name">Self-Care Tracker Web</h3>
-            <p data-i18n="proj1.desc">Aplikasi web untuk mencatat aktivitas perawatan diri harian, hidrasi, dan pelacakan tidur dengan visualisasi pastel yang manis.</p>
+            <div class="project-tags"><span>Laravel</span><span>React.js</span><span>MySQL</span></div>
+            <h3 data-i18n="proj2.name">Sistem Manajemen Kegiatan "Govplan"</h3>
+            <p data-i18n="proj2.desc">Govplan merupakan sistem manajemen kegiatan yang difungsikan untuk mengelola dan memantau kegiatan di lingkungan Badan Kesatuan Bangsa dan Politik Kabupaten Kebumen. Sistem ini memiliki 4 tampilan dashboard yaitu, admin, pegawai, kepala badan, dan kepala bidang. Sistem ini dikembangkan menggunakan Laravel dan React.js.
+              Sistem ini saya buat untuk memenuhi tugas akhir magang saya di Badan Kesatuan Bangsa dan Politik Kabupaten Kebumen.
+            </p>
           </div>
         </div>
         <div class="project-card" data-category="design">
@@ -462,21 +462,21 @@
         <form class="contact-form" id="contactForm" novalidate>
           <div class="form-group">
             <label for="nameInput" data-i18n="contact.nameLabel">Nama Lengkap</label>
-            <input type="text"  id="nameInput"    data-i18n-placeholder="contact.namePlaceholder"    placeholder="Nama Anda" required />
+            <input type="text"  id="nameInput"   name="from_name" data-i18n-placeholder="contact.namePlaceholder"    placeholder="Nama Anda" required />
             <span class="form-error" id="nameError"></span>
           </div>
           <div class="form-group">
             <label for="emailInput" data-i18n="contact.emailLabelForm">Alamat Email</label>
-            <input type="email" id="emailInput"   data-i18n-placeholder="contact.emailPlaceholder"   placeholder="email@contoh.com" required />
+            <input type="email" id="emailInput" name="from_email" data-i18n-placeholder="contact.emailPlaceholder"   placeholder="email@contoh.com" required />
             <span class="form-error" id="emailError"></span>
           </div>
           <div class="form-group">
             <label for="subjectInput" data-i18n="contact.subjectLabel">Subjek</label>
-            <input type="text"  id="subjectInput" data-i18n-placeholder="contact.subjectPlaceholder" placeholder="Tawaran Kerja / Magang / Kolaborasi" />
+            <input type="text"  id="subjectInput" name="subject" data-i18n-placeholder="contact.subjectPlaceholder" placeholder="Tawaran Kerja / Magang / Kolaborasi" />
           </div>
           <div class="form-group">
             <label for="messageInput" data-i18n="contact.messageLabel">Pesan Anda</label>
-            <textarea id="messageInput" rows="5" data-i18n-placeholder="contact.messagePlaceholder" placeholder="Tuliskan pesan secara singkat dan jelas di sini..." required></textarea>
+            <textarea id="messageInput" rows="5" name="message" data-i18n-placeholder="contact.messagePlaceholder" placeholder="Tuliskan pesan secara singkat dan jelas di sini..." required></textarea>
             <span class="form-error" id="messageError"></span>
           </div>
           <button type="submit" class="btn btn-primary btn-full" id="submitBtn">
@@ -513,6 +513,7 @@
 
   <button class="back-to-top" id="backToTop" aria-label="Back to top">↑</button>
 
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="script.js?v=2"></script>
 </body>
 </html>
